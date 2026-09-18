@@ -14,6 +14,7 @@ namespace MyApp
     {
         bool save=false;
         string path;
+
  
         public Form1()
         {
@@ -73,12 +74,27 @@ namespace MyApp
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //guradar ultimos cambios
+            if(save == true && !String.IsNullOrEmpty(path) && guardarToolStripMenuItem.Enabled)
+            {
+                rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
+            }
             this.Close();
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(save == true && !String.IsNullOrEmpty(path))
+            {
+                //tiene que tener un cambio y una ruat donde guardar
+                rctTexto.SaveFile(path, RichTextBoxStreamType.PlainText);
+                guardarToolStripMenuItem.Enabled = false;
+            }
         }
     }
 }
