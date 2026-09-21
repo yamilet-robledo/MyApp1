@@ -39,5 +39,13 @@ namespace MyApp
                 }
             }
         }
+
+        private void dgvRegistros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Form editar = new Form2(
+                dgvRegistros.Rows[e.RowIndex].Cells[1].Value.ToString(),
+                dgvRegistros.Rows[e.RowIndex].Cells[2].Value.ToString());
+            editar.Show();
+        }
     }
 }
