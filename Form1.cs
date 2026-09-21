@@ -10,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CsvHelper;
+using System.Globalization;
+using System.IO;
 
 namespace MyApp
 {
@@ -34,5 +37,7 @@ namespace MyApp
                     dgvRegistros.Rows.Add(registro.id, registro.name, registro.email);
 
                 }
+            }
+        }
     }
 }
