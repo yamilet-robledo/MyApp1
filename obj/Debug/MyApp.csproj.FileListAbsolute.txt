@@ -16,3 +16,20 @@ C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\Interop.MediaPlayer.dll
 C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\Interop.WMPLib.dll
 C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\MyApp.csproj.ResolveComReference.cache
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\bin\Debug\MyApp.exe.config
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\bin\Debug\MyApp.exe
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\bin\Debug\MyApp.pdb
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\bin\Debug\Interop.WMPLib.dll
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\obj\Debug\MyApp.csproj.AssemblyReference.cache
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\obj\Debug\Interop.MediaPlayer.dll
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\obj\Debug\Interop.WMPLib.dll
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\obj\Debug\MyApp.csproj.ResolveComReference.cache
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\obj\Debug\MyApp.Form1.resources
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\obj\Debug\MyApp.frmConfigurar.resources
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\obj\Debug\MyApp.Properties.Resources.resources
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\obj\Debug\MyApp.csproj.GenerateResource.cache
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\obj\Debug\MyApp.csproj.CoreCompileInputs.cache
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\obj\Debug\MyApp.exe
+C:\Users\yamil\source\repos\yamilet-robledo\MyApp1\obj\Debug\MyApp.pdb
