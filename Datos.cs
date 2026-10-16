@@ -13,7 +13,7 @@ namespace MyApp
     internal class Datos
     {
         SqlConnection conexion;
-        string cadenaConexion = "Server=localhost; Integrated Security = false;" + "User = sa:password= Y25130232?; initial catalog = Agenda;";
+        string cadenaConexion = "Server=localhost,1434;Database=Agenda;User Id=sa;Password=Y25130232?;TrustServerCertificate=True;";
         public Datos()
         {
 
@@ -50,7 +50,7 @@ namespace MyApp
             {
                 conexionOpen();
                 string comando = "Insert Into Datos(nombre, paterno, materno, telefono, " +
-                    "correo)Values(" + nombre + "','" + paterno + "','" + materno + "','" + telefono + "','" + correo + "')";
+                    "correo)Values('" + nombre + "','" + paterno + "','" + materno + "','" + telefono + "','" + correo + "')";
                 SqlCommand sqlCommand = new SqlCommand(comando, conexion);
                 sqlCommand.ExecuteNonQuery();
                 conexionClose(conexion);
@@ -67,8 +67,7 @@ namespace MyApp
             DataSet ds = new DataSet();
             try
             {
-                SqlConnection conexion = new SqlConnection();
-                //SqlConnection conecta = conexionOpen();
+                conexionOpen();
                 SqlDataAdapter da = new SqlDataAdapter(comando, conexion);
                 da.Fill(ds);
                 conexionClose(conexion);

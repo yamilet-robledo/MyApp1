@@ -12,6 +12,7 @@ namespace MyApp
 {
     public partial class frmInformacion : Form
     {
+        private Datos datos;
         public frmInformacion()
         {
             InitializeComponent();
@@ -23,23 +24,44 @@ namespace MyApp
             agregar.Show();
 ;        }
 
-        private void frmInformacion_Load(object sender, EventArgs e)
+        private void ActualizarGrid()
         {
-            if(this.DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+             datos = new Datos();
+            DataSet ds = datos.informacion("Select * from datos");
+            if(ds != null)
             {
-                return;
-            }
-            Datos datos = new Datos();
-            DataSet ds = datos.informacion("Select * from Datos");
-            if(ds!=null)
-            {
+                dgvInformacion.AutoGenerateColumns = false;
+
+                
+                dgvInformacion.Columns[0].DataPropertyName = "Id";
+                dgvInformacion.Columns[1].DataPropertyName = "nombre";
+                dgvInformacion.Columns[2].DataPropertyName = "paterno";
+                dgvInformacion.Columns[3].DataPropertyName = "materno";
+                dgvInformacion.Columns[4].DataPropertyName = "telefono";
+                dgvInformacion.Columns[5].DataPropertyName = "correo";
                 dgvInformacion.DataSource = ds.Tables[0];
             }
             else
             {
-                MessageBox.Show("Error al cargar la informacion","sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo obtener la información de la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+         
+
+                
+        }
+        private void frmInformacion_Load(object sender, EventArgs e)
+        {
+            ActualizarGrid();
         }
 
+        private void frmInformacion_Activated(object sender, EventArgs e)
+        {
+            ActualizarGrid();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
