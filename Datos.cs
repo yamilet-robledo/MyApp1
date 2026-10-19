@@ -44,14 +44,12 @@ namespace MyApp
                 return null;
             }
         }
-        public bool Insertar(string nombre, string paterno, string materno, string telefono, string correo)
+        public bool ejecutar(SqlCommand command)
         {
             try
-            {
-                conexionOpen();
-                string comando = "Insert Into Datos(nombre, paterno, materno, telefono, " +
-                    "correo)Values('" + nombre + "','" + paterno + "','" + materno + "','" + telefono + "','" + correo + "')";
-                SqlCommand sqlCommand = new SqlCommand(comando, conexion);
+            { 
+                SqlConnection conexion = new conexionOpen();
+                SqlConnection.Connection = conectar;
                 sqlCommand.ExecuteNonQuery();
                 conexionClose(conexion);
                 return true;

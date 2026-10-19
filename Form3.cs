@@ -37,8 +37,8 @@ namespace MyApp
                 dgvInformacion.Columns[1].DataPropertyName = "nombre";
                 dgvInformacion.Columns[2].DataPropertyName = "paterno";
                 dgvInformacion.Columns[3].DataPropertyName = "materno";
-                dgvInformacion.Columns[4].DataPropertyName = "telefono";
-                dgvInformacion.Columns[5].DataPropertyName = "correo";
+                dgvInformacion.Columns[4].DataPropertyName = "correo";
+                dgvInformacion.Columns[5].DataPropertyName = "telefono";
                 dgvInformacion.DataSource = ds.Tables[0];
             }
             else

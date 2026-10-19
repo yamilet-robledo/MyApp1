@@ -142,6 +142,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(175, 22);
             this.txtTelefono.TabIndex = 12;
+            this.txtTelefono.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtTelefono_MaskInputRejected);
             // 
             // frmAgregar
             // 
