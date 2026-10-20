@@ -12,7 +12,7 @@ namespace MyApp
 {
     public partial class frmInformacion : Form
     {
-        private Datos datos;
+         Datos datos;
         public frmInformacion()
         {
             InitializeComponent();
@@ -28,6 +28,7 @@ namespace MyApp
         {
              datos = new Datos();
             DataSet ds = datos.informacion("Select * from datos");
+
             if(ds != null)
             {
                 dgvInformacion.AutoGenerateColumns = false;
@@ -39,14 +40,13 @@ namespace MyApp
                 dgvInformacion.Columns[3].DataPropertyName = "materno";
                 dgvInformacion.Columns[4].DataPropertyName = "correo";
                 dgvInformacion.Columns[5].DataPropertyName = "telefono";
+
                 dgvInformacion.DataSource = ds.Tables[0];
             }
             else
             {
                 MessageBox.Show("No se pudo obtener la información de la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-         
-
+            }         
                 
         }
         private void frmInformacion_Load(object sender, EventArgs e)

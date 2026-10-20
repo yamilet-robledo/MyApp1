@@ -15,6 +15,7 @@ namespace MyApp
     public partial class frmAgregar : Form
     {
         bool updateMode = false;
+        int id;
         Datos datos;
        
         public frmAgregar()
@@ -22,7 +23,7 @@ namespace MyApp
             InitializeComponent();
         }
 
-        private void frmAgregar_Load(String nombre, string paterno, string materno, string telefono, string correo)
+        private void frmAgregar_Load(String nombre, string paterno, string materno, string telefono, string correo, int id)
         {
             InitializeComponent();
             txtNombre.Text = nombre;
@@ -31,22 +32,31 @@ namespace MyApp
             txtTelefono.Text = telefono;
             txtCorreo.Text = correo;
             btnAgregar.Text = "Actualiza";
-            updateModde = true;
+            updateMode = true;
+            this.id = id;
 
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-           
-                datos = new Datos();
-                bool f = datos.ejecutar("Insert Into Datos(nombre, paterno, materno, telefono, correo)Values" +
-                    "('" + txtNombre.Text + "','" + txtPaterno.Text + "','" + txtMaterno.Text + "','" + txtTelefono.Text
-                    + "','" + txtCorreo.Text + "')");
-                if(f)
-                {
-                    MessageBox.Show("Registros agregados correctamente");
-                    this.Close();
-                }
+
+            datos = new Datos();
+            if (updateMode == false)
+            {
+            bool f = datos.ejecutar("Insert Into Datos(nombre, paterno, materno, telefono, correo)Values" +
+                "('" + txtNombre.Text + "','" + txtPaterno.Text + "','" + txtMaterno.Text + "','" + txtTelefono.Text
+                + "','" + txtCorreo.Text + "')");
+            if (f)
+            {
+                MessageBox.Show("Registros agregados correctamente");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error al agregar el registro");
+            } 
+        }
+        
                 else
                 {
                     //MessageBox.Show("Error al agregar el registro");
@@ -58,7 +68,7 @@ namespace MyApp
                 comando.Parameters.AddWithValue("@materno", txtMaterno.Text);
                 comando.Parameters.AddWithValue("@telefono", txtTelefono.Text);
                 comando.Parameters.AddWithValue("@correo", txtCorreo.Text);
-                comando.Parameters.AddWithValue("@id", 1); // Assuming you have an ID to update
+          ; 
                 bool f = datos.ejecutar(comando);
                 if (f)
                 {
@@ -71,17 +81,22 @@ namespace MyApp
                 }
             }
             }
-           
-        
 
+        private void frmAgregar_Load(object sender, EventArgs e)
+        {
+
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            // this.Close();
         }
 
-        private void txtTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
+         private void txtTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+             {
 
-        }
+            }
     }
 }
+
+
+

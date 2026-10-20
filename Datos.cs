@@ -13,7 +13,8 @@ namespace MyApp
     internal class Datos
     {
         SqlConnection conexion;
-        string cadenaConexion = "Server=localhost,1434;Database=Agenda;User Id=sa;Password=Y25130232?;TrustServerCertificate=True;";
+        string cadenaConexion = "Server=localhost,1434;Database=Agenda" +
+            ";User Id=sa;Password=Y25130232?;TrustServerCertificate=True;";
         public Datos()
         {
 
@@ -22,21 +23,9 @@ namespace MyApp
         {
             try
             {
-                conexion = new SqlConnection(cadenaConexion);
+               SqlConnection conexion = new SqlConnection(cadenaConexion);
                 conexion.Open();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.ToString());
-            }
-        }
-        private SqlConnection conexionClose(SqlConnection conexion)
-        {
-            try
-            {
-                conexion.Close();
-                return conexion;
-
+                return conexion();
             }
             catch(Exception ex)
             {
@@ -44,16 +33,44 @@ namespace MyApp
                 return null;
             }
         }
-        public bool ejecutar(SqlCommand command)
+        private void conexionClose(SqlConnection conexion)
+        {
+            try
+            {
+                conexion.Close();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.ToString());
+
+            }
+        }
+        public bool ejecutar( string command)
         {
             try
             { 
-                SqlConnection conexion = new conexionOpen();
-                SqlConnection.Connection = conectar;
+                SqlConnection conectar = conexionOpen();
+                SqlConnection sqlCommand = new SqlCommand(command, conectar);
                 sqlCommand.ExecuteNonQuery();
-                conexionClose(conexion);
+                conexionClose(conectar);
                 return true;
             } 
+            catch(Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.ToString());
+                return false;
+            }
+        }
+        public bool ejecutar(SqlCommand command)
+        {
+            try
+            {
+                SqlConnection conectar = conexionOpen();
+                command.Connection = conectar;
+                command.ExecuteNonQuery();
+                conexionClose(conectar);
+                return true;
+            }
             catch(Exception ex)
             {
                 Console.WriteLine("Error: " + ex.ToString());
@@ -65,10 +82,10 @@ namespace MyApp
             DataSet ds = new DataSet();
             try
             {
-                conexionOpen();
-                SqlDataAdapter da = new SqlDataAdapter(comando, conexion);
+              SqlConnection conecta = conexionOpen();
+                SqlDataAdapter da = new SqlDataAdapter(comando, conecta);
                 da.Fill(ds);
-                conexionClose(conexion);
+                conexionClose(conecta);
                 return ds;
             }
             catch(Exception ex)
