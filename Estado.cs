@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace MyApp
 {
-    internal class Persona
+    public class Estado
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string email { get; set; }
+        public string ID { get; set; }
+        public string NOMBRE { get; set; }
     }
 }
