@@ -31,14 +31,13 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnCargarEstados = new System.Windows.Forms.Button();
             this.dgvRegistros = new System.Windows.Forms.DataGridView();
-            this.ofdCSV = new System.Windows.Forms.OpenFileDialog();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.bntCargarMunicipios = new System.Windows.Forms.Button();
+            this.ofdCSV = new System.Windows.Forms.OpenFileDialog();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -55,7 +54,6 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.bntCargarMunicipios);
             this.splitContainer1.Panel1.Controls.Add(this.btnCargarEstados);
             // 
             // splitContainer1.Panel2
@@ -67,11 +65,11 @@
             // 
             // btnCargarEstados
             // 
-            this.btnCargarEstados.Location = new System.Drawing.Point(123, 12);
+            this.btnCargarEstados.Location = new System.Drawing.Point(26, 22);
             this.btnCargarEstados.Name = "btnCargarEstados";
-            this.btnCargarEstados.Size = new System.Drawing.Size(75, 60);
+            this.btnCargarEstados.Size = new System.Drawing.Size(203, 40);
             this.btnCargarEstados.TabIndex = 0;
-            this.btnCargarEstados.Text = "Cargar Estados";
+            this.btnCargarEstados.Text = "Insertar";
             this.btnCargarEstados.UseVisualStyleBackColor = true;
             this.btnCargarEstados.Click += new System.EventHandler(this.btnCargar_Click);
             // 
@@ -94,26 +92,6 @@
             this.dgvRegistros.Size = new System.Drawing.Size(482, 269);
             this.dgvRegistros.TabIndex = 0;
             this.dgvRegistros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellContentClick);
-            // 
-            // ofdCSV
-            // 
-            this.ofdCSV.FileName = "openFileDialog1";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Column4";
-            this.dataGridViewImageColumn1.Image = global::MyApp.Properties.Resources.boton_editar;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 50;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "Column5";
-            this.dataGridViewImageColumn2.Image = global::MyApp.Properties.Resources.borrar;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 50;
             // 
             // Column1
             // 
@@ -149,15 +127,25 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 30;
             // 
-            // bntCargarMunicipios
+            // ofdCSV
             // 
-            this.bntCargarMunicipios.Location = new System.Drawing.Point(261, 12);
-            this.bntCargarMunicipios.Name = "bntCargarMunicipios";
-            this.bntCargarMunicipios.Size = new System.Drawing.Size(79, 60);
-            this.bntCargarMunicipios.TabIndex = 1;
-            this.bntCargarMunicipios.Text = "Cargar Municipios";
-            this.bntCargarMunicipios.UseVisualStyleBackColor = true;
-            this.bntCargarMunicipios.Click += new System.EventHandler(this.bntCargarMunicipios_Click);
+            this.ofdCSV.FileName = "openFileDialog1";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Column4";
+            this.dataGridViewImageColumn1.Image = global::MyApp.Properties.Resources.boton_editar;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Column5";
+            this.dataGridViewImageColumn2.Image = global::MyApp.Properties.Resources.borrar;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 50;
             // 
             // Form1
             // 
@@ -190,7 +178,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewImageColumn Column4;
         private System.Windows.Forms.DataGridViewImageColumn Column5;
-        private System.Windows.Forms.Button bntCargarMunicipios;
     }
 }
 
