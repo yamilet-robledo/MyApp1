@@ -19,13 +19,13 @@ namespace MyApp
         {
 
         }
-        private void conexionOpen()
+        private SqlConnection conexionOpen()
         {
             try
             {
                SqlConnection conexion = new SqlConnection(cadenaConexion);
                 conexion.Open();
-                return conexion();
+                return conexion;
             }
             catch(Exception ex)
             {
@@ -50,7 +50,7 @@ namespace MyApp
             try
             { 
                 SqlConnection conectar = conexionOpen();
-                SqlConnection sqlCommand = new SqlCommand(command, conectar);
+                SqlCommand sqlCommand = new SqlCommand(command, conectar);
                 sqlCommand.ExecuteNonQuery();
                 conexionClose(conectar);
                 return true;

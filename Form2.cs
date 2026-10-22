@@ -21,9 +21,10 @@ namespace MyApp
         public frmAgregar()
         {
             InitializeComponent();
+         
         }
-
-        private void frmAgregar_Load(String nombre, string paterno, string materno, string telefono, string correo, int id)
+       
+        public frmAgregar(int id, string nombre, string paterno, string materno, string telefono, string correo)
         {
             InitializeComponent();
             txtNombre.Text = nombre;
@@ -32,6 +33,7 @@ namespace MyApp
             txtTelefono.Text = telefono;
             txtCorreo.Text = correo;
             btnAgregar.Text = "Actualiza";
+
             updateMode = true;
             this.id = id;
 
@@ -68,7 +70,8 @@ namespace MyApp
                 comando.Parameters.AddWithValue("@materno", txtMaterno.Text);
                 comando.Parameters.AddWithValue("@telefono", txtTelefono.Text);
                 comando.Parameters.AddWithValue("@correo", txtCorreo.Text);
-          ; 
+                comando.Parameters.AddWithValue("@id", this.id);
+          
                 bool f = datos.ejecutar(comando);
                 if (f)
                 {
@@ -88,7 +91,7 @@ namespace MyApp
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            // this.Close();
+             this.Close();
         }
 
          private void txtTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
