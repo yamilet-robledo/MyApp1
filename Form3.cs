@@ -123,6 +123,12 @@ namespace MyApp
         {
 
         }
+
+        private void dgvInformacion_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
     }
 }
 
