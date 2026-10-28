@@ -87,17 +87,28 @@ namespace MyApp
 
         private void frmAgregar_Load(object sender, EventArgs e)
         {
+            datos = new Datos();
+            DataSet dsEstados, dsMunicipios;
+            dsEstados = datos.informacion("Select * from Estados");
+            if(dsEstados!=null && dsEstados.Tables.Count > 0)
+            {
+                cmbEstado.DataSource = dsEstados.Tables[0];
+                cmbEstado.DisplayMember = "Estado";
+                cmbEstado.ValueMember = "idEstado";
 
+                dsMunicipios=datos.informacion("Select * from Municipios where idEstado = " + cmbEstado.SelectedValue);
+                if(dsMunicipios!=null && dsMunicipios.Tables.Count > 0)
+                {
+                    cmbMunicipio.DataSource = dsMunicipios.Tables[0];
+                    cmbMunicipio.DisplayMember = "Municipio";
+                    cmbMunicipio.ValueMember = "idMunicipio";
+                }
+            }
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
              this.Close();
         }
-
-         private void txtTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-             {
-
-            }
     }
 }
 

@@ -40,6 +40,10 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbMunicipio = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +64,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(34, 393);
+            this.btnAgregar.Location = new System.Drawing.Point(14, 512);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(82, 32);
             this.btnAgregar.TabIndex = 2;
@@ -70,7 +74,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(146, 393);
+            this.btnCerrar.Location = new System.Drawing.Point(126, 512);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(82, 32);
             this.btnCerrar.TabIndex = 3;
@@ -121,7 +125,7 @@
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(16, 347);
+            this.txtCorreo.Location = new System.Drawing.Point(12, 336);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(192, 22);
             this.txtCorreo.TabIndex = 11;
@@ -140,15 +144,52 @@
             this.txtTelefono.Location = new System.Drawing.Point(16, 276);
             this.txtTelefono.Mask = "(999)000-0000";
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(175, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(192, 22);
             this.txtTelefono.TabIndex = 12;
-            this.txtTelefono.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtTelefono_MaskInputRejected);
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(12, 395);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(192, 24);
+            this.cmbEstado.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 376);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 16);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Estados";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(11, 442);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 16);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Municipios";
+            // 
+            // cmbMunicipio
+            // 
+            this.cmbMunicipio.FormattingEnabled = true;
+            this.cmbMunicipio.Location = new System.Drawing.Point(12, 461);
+            this.cmbMunicipio.Name = "cmbMunicipio";
+            this.cmbMunicipio.Size = new System.Drawing.Size(192, 24);
+            this.cmbMunicipio.TabIndex = 16;
             // 
             // frmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 450);
+            this.ClientSize = new System.Drawing.Size(292, 575);
+            this.Controls.Add(this.cmbMunicipio);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.label5);
@@ -183,5 +224,9 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox txtTelefono;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbMunicipio;
     }
 }
