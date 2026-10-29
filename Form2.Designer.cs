@@ -180,6 +180,7 @@
             this.cmbMunicipio.Name = "cmbMunicipio";
             this.cmbMunicipio.Size = new System.Drawing.Size(192, 24);
             this.cmbMunicipio.TabIndex = 16;
+            this.cmbMunicipio.SelectedIndexChanged += new System.EventHandler(this.cmbMunicipio_SelectedIndexChanged);
             // 
             // frmAgregar
             // 
