@@ -45,9 +45,9 @@ namespace MyApp
             datos = new Datos();
             if (updateMode == false)
             {
-            bool f = datos.ejecutar("Insert Into Datos(nombre, paterno, materno, telefono, correo)Values" +
+            bool f = datos.ejecutar("Insert Into Datos(nombre, paterno, materno, telefono, correo, idEstado,idMunicipio)Values" +
                 "('" + txtNombre.Text + "','" + txtPaterno.Text + "','" + txtMaterno.Text + "','" + txtTelefono.Text
-                + "','" + txtCorreo.Text + "')");
+                + "','" + txtCorreo.Text + "'," + cmbEstado.SelectedValue + "," + cmbMunicipio.SelectedValue + ")");
             if (f)
             {
                 MessageBox.Show("Registros agregados correctamente");
@@ -118,10 +118,7 @@ namespace MyApp
 
         private void CambiosMunicipios(int idEstado)
         {
-
-            datos = new Datos();
             DataSet dsMunicipios;
-
             dsMunicipios = datos.informacion("Select * from Municipios where idEstado = " + idEstado);
             if (dsMunicipios != null && dsMunicipios.Tables.Count > 0)
             {

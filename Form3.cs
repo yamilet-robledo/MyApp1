@@ -29,7 +29,7 @@ namespace MyApp
         private void ActualizarGrid()
         {
              datos = new Datos();
-            DataSet ds = datos.informacion("Select * from datos");
+            DataSet ds = datos.informacion("select ID, nombre, paterno, materno, telefono, correo, Estados,Municipio * from Datos\r\nInner Join Estados  On Datos.IDEstado = Estados\r\nInner Join Municipio On Datos.IDMunicipio=Municipios.IDMunicipio");
 
             if(ds != null)
             {
@@ -42,11 +42,13 @@ namespace MyApp
                 dgvInformacion.Columns[3].DataPropertyName = "materno";
                 dgvInformacion.Columns[4].DataPropertyName = "telefono";
                 dgvInformacion.Columns[5].DataPropertyName = "correo";
+                dgvInformacion.Columns[6].DataPropertyName = "Estados";
+                dgvInformacion.Columns[7].DataPropertyName = "Municipio";
 
                 dgvInformacion.DataSource = ds.Tables[0];
-                dgvInformacion.CurrentCell = null;
-                dgvInformacion.DataSource = null;
-                dgvInformacion.DataSource = ds.Tables[0];
+                //dgvInformacion.CurrentCell = null;
+                //dgvInformacion.DataSource = null;
+                //dgvInformacion.DataSource = ds.Tables[0];
             }
             else
             {
@@ -104,19 +106,18 @@ namespace MyApp
 
         private void dgvInformacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                int id = Convert.ToInt32(dgvInformacion.Rows[e.RowIndex].Cells[0].Value);
-                string nombre = dgvInformacion.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string paterno = dgvInformacion.Rows[e.RowIndex].Cells[2].Value.ToString();
-                string materno = dgvInformacion.Rows[e.RowIndex].Cells[3].Value.ToString();
-                string telefono = dgvInformacion.Rows[e.RowIndex].Cells[4].Value.ToString();
-                string correo = dgvInformacion.Rows[e.RowIndex].Cells[5].Value.ToString();
+              frmAgregar actualizar = new frmAgregar(dgvInformacion.Rows[e.RowIndex].Cells[0].Value.ToString(),
 
-                frmAgregar actualizar = new frmAgregar(id, nombre, paterno, materno, telefono, correo);
+                dgvInformacion.Rows[e.RowIndex].Cells[1].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[3].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[4].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[5].Value.ToString(),  
+
+                Convert.ToInt32(dgvInformacion.Rows[e.RowIndex].Cells[0].Value));
                 actualizar.ShowDialog();
                 ActualizarGrid();
-            }
+            
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
