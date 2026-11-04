@@ -14,7 +14,7 @@ namespace MyApp
    
     public partial class frmAgregar : Form
     {
-        bool updateMode = false;
+        bool updateMode = false,inicio = false;
         int id;
         Datos datos;
        
@@ -24,7 +24,7 @@ namespace MyApp
          
         }
        
-        public frmAgregar(int id, string nombre, string paterno, string materno, string telefono, string correo)
+        public frmAgregar(string nombre, string paterno, string materno, string telefono, string correo, int id, string estado, string municipio)
         {
             InitializeComponent();
             txtNombre.Text = nombre;
@@ -32,10 +32,13 @@ namespace MyApp
             txtMaterno.Text = materno;
             txtTelefono.Text = telefono;
             txtCorreo.Text = correo;
-            btnAgregar.Text = "Actualiza";
 
+            btnAgregar.Text = "Actualiza";
             updateMode = true;
             this.id = id;
+            cargaInformacion();
+            cmbEstado.Text = estado;
+            cmbMunicipio.Text = municipio;
 
         }
 
@@ -84,6 +87,20 @@ namespace MyApp
                 }
             }
             }
+        private void cargaInformacion()
+        {
+            datos= new Datos();
+            DataSet dsEstados;
+            dsEstados = datos.informacion("Select * from Estados");
+            if (dsEstados != null && dsEstados.Tables.Count > 0)
+            {
+               cmbEstado.DataSource = dsEstados.Tables[0];
+                cmbEstado.DisplayMember = "Estado";
+                cmbEstado.ValueMember = "idEstado";
+            }
+            CambiosMunicipios(Convert.ToInt32(cmbEstado.SelectedIndex));
+            inicio = true;
+        }
 
         private void frmAgregar_Load(object sender, EventArgs e)
         {
@@ -108,6 +125,7 @@ namespace MyApp
         }
         private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(inicio)
             CambiosMunicipios(Convert.ToInt32(cmbEstado.SelectedIndex+1));
         }
 
