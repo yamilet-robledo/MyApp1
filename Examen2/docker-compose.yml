@@ -1,0 +1,17 @@
+﻿services:
+  mssql_examen2:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: mssql_examen2
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Y25130232?"
+      MSSQL_PID: "Developer"
+      TZ: "America/Mexico_City"
+    ports:
+      - "1434:1433"
+    volumes:
+      - mssql_data_examen2:/var/opt/mssql
+
+volumes:
+  mssql_data_examen2:
