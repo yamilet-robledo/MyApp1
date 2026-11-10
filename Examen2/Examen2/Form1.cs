@@ -10,31 +10,17 @@ using System.Windows.Forms;
 
 namespace Examen2
 {
-    public partial class Menu : Form
+    public partial class Form1 : Form
     {
-        public Menu()
+        public Form1()
         {
             InitializeComponent();
         }
 
-        private void rentarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void suscriptoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmSuscriptores uscriptor = new frmSuscriptores();
 
-            frmRentar Rentar = new frmRentar();
-            Rentar.Show();
-        }
-
-        private void devolverToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDevolver Devolver = new frmDevolver();
-            Devolver.Show();
-        }
-
-        private void informacionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            frmInformacion informacion = new frmInformacion();
-            informacion.Show();
         }
     }
 }
