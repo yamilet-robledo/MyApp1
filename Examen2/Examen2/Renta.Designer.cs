@@ -34,6 +34,7 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.cbSuscriptor = new System.Windows.Forms.ComboBox();
             this.cbPelicula = new System.Windows.Forms.ComboBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(356, 116);
+            this.btnRegistrar.Location = new System.Drawing.Point(178, 423);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(137, 31);
             this.btnRegistrar.TabIndex = 4;
@@ -94,11 +95,22 @@
             this.cbPelicula.TabIndex = 6;
             this.cbPelicula.SelectedIndexChanged += new System.EventHandler(this.cbPelicula_SelectedIndexChanged);
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(394, 120);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.Text = "agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // Renta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 441);
+            this.ClientSize = new System.Drawing.Size(504, 508);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.cbPelicula);
             this.Controls.Add(this.cbSuscriptor);
             this.Controls.Add(this.btnRegistrar);
@@ -122,5 +134,6 @@
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.ComboBox cbSuscriptor;
         private System.Windows.Forms.ComboBox cbPelicula;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
