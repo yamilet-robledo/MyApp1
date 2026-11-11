@@ -64,7 +64,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // catalogoToolStripMenuItem
@@ -79,13 +79,14 @@
             // peliculasToolStripMenuItem
             // 
             this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
-            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
             this.peliculasToolStripMenuItem.Text = "Peliculas";
+            this.peliculasToolStripMenuItem.Click += new System.EventHandler(this.peliculasToolStripMenuItem_Click);
             // 
             // suscriptoresToolStripMenuItem
             // 
             this.suscriptoresToolStripMenuItem.Name = "suscriptoresToolStripMenuItem";
-            this.suscriptoresToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.suscriptoresToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
             this.suscriptoresToolStripMenuItem.Text = "Suscriptores";
             this.suscriptoresToolStripMenuItem.Click += new System.EventHandler(this.suscriptoresToolStripMenuItem_Click);
             // 
@@ -101,13 +102,13 @@
             // rentaToolStripMenuItem1
             // 
             this.rentaToolStripMenuItem1.Name = "rentaToolStripMenuItem1";
-            this.rentaToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.rentaToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
             this.rentaToolStripMenuItem1.Text = "Renta";
             // 
             // devolucionToolStripMenuItem
             // 
             this.devolucionToolStripMenuItem.Name = "devolucionToolStripMenuItem";
-            this.devolucionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.devolucionToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.devolucionToolStripMenuItem.Text = "Devolucion";
             // 
             // Form1
@@ -118,7 +119,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

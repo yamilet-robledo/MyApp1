@@ -47,40 +47,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos.cs" />
-    <Compile Include="Devolver.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Devolver.Designer.cs">
-      <DependentUpon>Devolver.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Informacion.cs">
+    <Compile Include="frmSuscriptores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Informacion.Designer.cs">
-      <DependentUpon>Informacion.cs</DependentUpon>
+    <Compile Include="frmSuscriptores.Designer.cs">
+      <DependentUpon>frmSuscriptores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPeliculas.Designer.cs">
+      <DependentUpon>frmPeliculas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rentar.cs">
+    <Compile Include="Renta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rentar.Designer.cs">
-      <DependentUpon>Rentar.cs</DependentUpon>
+    <Compile Include="Renta.Designer.cs">
+      <DependentUpon>Renta.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Devolver.resx">
-      <DependentUpon>Devolver.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Informacion.resx">
-      <DependentUpon>Informacion.cs</DependentUpon>
+    <EmbeddedResource Include="frmSuscriptores.resx">
+      <DependentUpon>frmSuscriptores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPeliculas.resx">
+      <DependentUpon>frmPeliculas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,8 +91,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Rentar.resx">
-      <DependentUpon>Rentar.cs</DependentUpon>
+    <EmbeddedResource Include="Renta.resx">
+      <DependentUpon>Renta.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\docker-compose.yml">
       <Link>docker-compose.yml</Link>

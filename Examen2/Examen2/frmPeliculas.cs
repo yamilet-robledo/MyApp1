@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyApp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,27 +13,37 @@ namespace Examen2
 {
     public partial class frmPeliculas : Form
     {
-        public frmPeliculas()
+        Datos obj = new Datos();
+        public  frmPeliculas()
         {
             InitializeComponent();
         }
-
-        private void frmPeliculas_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            bool f = obj.ejecutar("Insert Into Peliculas (pelicula)" +
-                "values('" + txtPelicula.Text + "')");
+           bool f = obj.ejecutar("Insert Into Peliculas(pelicula)" +
+            "values('" + txtPelicula.Text + "')");
             if (f)
             {
-                ActualizarGrid("Selected id, pelicula From Peliculas");
+                ActualizaGrid("Select id,pelicula From Peliculas");
             }
         }
-        private void ActualizarGrid (string comando) {
+        private void ActualizaGrid(string comando)
+        {
+          DataSet ds = obj.informacion(comando);
+           if(ds != null)
+            {
+            dgvPeliculas.DataSource = ds.Tables[0];
+            }
+         
+        }
+        private void frmPeliculas_Load(object sender,EventArgs e)
+        {
+            ActualizaGrid("Select id,pelicula From Peliculas");
+        }
 
-            DataSet ds = object.Informacion(comando);
+        private void frmPeliculas_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

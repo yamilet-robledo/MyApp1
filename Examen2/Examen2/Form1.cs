@@ -19,8 +19,19 @@ namespace Examen2
 
         private void suscriptoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSuscriptores uscriptor = new frmSuscriptores();
+            frmSuscriptores suscriptor = new frmSuscriptores();
+            suscriptor.ShowDialog();
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void peliculasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPeliculas pelicula = new frmPeliculas();
+            pelicula.ShowDialog();
         }
     }
 }

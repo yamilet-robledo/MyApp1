@@ -13,7 +13,7 @@ namespace MyApp
     internal class Datos
     {
         SqlConnection conexion;
-        string cadenaConexion = "Server=localhost,1434;Database=Agenda" +
+        string cadenaConexion = "Server=localhost,1434;Database=examen2" +
             ";User Id=sa;Password=Y25130232?;TrustServerCertificate=True;";
         public Datos()
         {
