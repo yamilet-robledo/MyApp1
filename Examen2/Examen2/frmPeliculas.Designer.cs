@@ -32,15 +32,20 @@
             this.txtPelicula = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvPeliculas = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btneliminar = new System.Windows.Forms.Button();
+            this.btnmodificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeliculas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(-2, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(79, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
@@ -48,33 +53,76 @@
             // 
             this.txtPelicula.Location = new System.Drawing.Point(2, 47);
             this.txtPelicula.Name = "txtPelicula";
-            this.txtPelicula.Size = new System.Drawing.Size(337, 22);
+            this.txtPelicula.Size = new System.Drawing.Size(507, 22);
             this.txtPelicula.TabIndex = 1;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(358, 39);
+            this.btnAgregar.Location = new System.Drawing.Point(47, 336);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 30);
+            this.btnAgregar.Size = new System.Drawing.Size(88, 30);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // dgvPeliculas
             // 
             this.dgvPeliculas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPeliculas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Pelicula});
             this.dgvPeliculas.Location = new System.Drawing.Point(2, 97);
             this.dgvPeliculas.Name = "dgvPeliculas";
             this.dgvPeliculas.RowHeadersWidth = 51;
             this.dgvPeliculas.RowTemplate.Height = 24;
             this.dgvPeliculas.Size = new System.Drawing.Size(515, 215);
             this.dgvPeliculas.TabIndex = 3;
+            this.dgvPeliculas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeliculas_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Width = 125;
+            // 
+            // Pelicula
+            // 
+            this.Pelicula.DataPropertyName = "Pelicula";
+            this.Pelicula.HeaderText = "Pelicula";
+            this.Pelicula.MinimumWidth = 6;
+            this.Pelicula.Name = "Pelicula";
+            this.Pelicula.Width = 125;
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.Location = new System.Drawing.Point(337, 336);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(94, 33);
+            this.btneliminar.TabIndex = 9;
+            this.btneliminar.Text = "eliminar";
+            this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            // 
+            // btnmodificar
+            // 
+            this.btnmodificar.Location = new System.Drawing.Point(192, 333);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.Size = new System.Drawing.Size(93, 33);
+            this.btnmodificar.TabIndex = 8;
+            this.btnmodificar.Text = "modificar";
+            this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // frmPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 350);
+            this.ClientSize = new System.Drawing.Size(521, 381);
+            this.Controls.Add(this.btneliminar);
+            this.Controls.Add(this.btnmodificar);
             this.Controls.Add(this.dgvPeliculas);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtPelicula);
@@ -94,5 +142,9 @@
         private System.Windows.Forms.TextBox txtPelicula;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvPeliculas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pelicula;
+        private System.Windows.Forms.Button btneliminar;
+        private System.Windows.Forms.Button btnmodificar;
     }
 }

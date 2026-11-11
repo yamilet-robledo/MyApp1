@@ -30,73 +30,106 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSuscriptores = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNom = new System.Windows.Forms.TextBox();
             this.btnAgg = new System.Windows.Forms.Button();
+            this.btnmodificar = new System.Windows.Forms.Button();
+            this.btneliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuscriptores)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(79, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
             // dgvSuscriptores
             // 
+            this.dgvSuscriptores.AllowUserToAddRows = false;
+            this.dgvSuscriptores.AllowUserToDeleteRows = false;
             this.dgvSuscriptores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSuscriptores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Nombre});
             this.dgvSuscriptores.Location = new System.Drawing.Point(6, 101);
             this.dgvSuscriptores.Name = "dgvSuscriptores";
+            this.dgvSuscriptores.ReadOnly = true;
             this.dgvSuscriptores.RowHeadersWidth = 51;
             this.dgvSuscriptores.RowTemplate.Height = 24;
             this.dgvSuscriptores.Size = new System.Drawing.Size(547, 218);
             this.dgvSuscriptores.TabIndex = 1;
+            this.dgvSuscriptores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuscriptores_CellClick);
             // 
-            // label2
+            // ID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 340);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nombre";
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 125;
             // 
-            // txtBuscar
+            // Nombre
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(6, 57);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(421, 22);
-            this.txtBuscar.TabIndex = 3;
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 125;
             // 
-            // txtNombre
+            // txtNom
             // 
-            this.txtNombre.Location = new System.Drawing.Point(12, 370);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(412, 22);
-            this.txtNombre.TabIndex = 4;
+            this.txtNom.Location = new System.Drawing.Point(6, 63);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(547, 22);
+            this.txtNom.TabIndex = 3;
             // 
             // btnAgg
             // 
-            this.btnAgg.Location = new System.Drawing.Point(478, 364);
+            this.btnAgg.Location = new System.Drawing.Point(79, 339);
             this.btnAgg.Name = "btnAgg";
-            this.btnAgg.Size = new System.Drawing.Size(75, 28);
+            this.btnAgg.Size = new System.Drawing.Size(92, 25);
             this.btnAgg.TabIndex = 5;
             this.btnAgg.Text = "Agregar";
             this.btnAgg.UseVisualStyleBackColor = true;
+            this.btnAgg.Click += new System.EventHandler(this.btnAgg_Click);
+            // 
+            // btnmodificar
+            // 
+            this.btnmodificar.Location = new System.Drawing.Point(208, 339);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.Size = new System.Drawing.Size(109, 25);
+            this.btnmodificar.TabIndex = 6;
+            this.btnmodificar.Text = "modificar";
+            this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.Location = new System.Drawing.Point(375, 336);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(97, 28);
+            this.btneliminar.TabIndex = 7;
+            this.btneliminar.Text = "eliminar";
+            this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // frmSuscriptores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 450);
+            this.ClientSize = new System.Drawing.Size(584, 390);
+            this.Controls.Add(this.btneliminar);
+            this.Controls.Add(this.btnmodificar);
             this.Controls.Add(this.btnAgg);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtNom);
             this.Controls.Add(this.dgvSuscriptores);
             this.Controls.Add(this.label1);
             this.Name = "frmSuscriptores";
@@ -112,9 +145,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvSuscriptores;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Button btnAgg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.Button btnmodificar;
+        private System.Windows.Forms.Button btneliminar;
     }
 }

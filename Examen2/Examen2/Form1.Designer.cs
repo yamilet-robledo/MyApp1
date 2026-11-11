@@ -64,7 +64,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // catalogoToolStripMenuItem
@@ -79,14 +79,14 @@
             // peliculasToolStripMenuItem
             // 
             this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
-            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.peliculasToolStripMenuItem.Text = "Peliculas";
             this.peliculasToolStripMenuItem.Click += new System.EventHandler(this.peliculasToolStripMenuItem_Click);
             // 
             // suscriptoresToolStripMenuItem
             // 
             this.suscriptoresToolStripMenuItem.Name = "suscriptoresToolStripMenuItem";
-            this.suscriptoresToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.suscriptoresToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.suscriptoresToolStripMenuItem.Text = "Suscriptores";
             this.suscriptoresToolStripMenuItem.Click += new System.EventHandler(this.suscriptoresToolStripMenuItem_Click);
             // 
@@ -102,14 +102,16 @@
             // rentaToolStripMenuItem1
             // 
             this.rentaToolStripMenuItem1.Name = "rentaToolStripMenuItem1";
-            this.rentaToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
+            this.rentaToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.rentaToolStripMenuItem1.Text = "Renta";
+            this.rentaToolStripMenuItem1.Click += new System.EventHandler(this.rentaToolStripMenuItem1_Click);
             // 
             // devolucionToolStripMenuItem
             // 
             this.devolucionToolStripMenuItem.Name = "devolucionToolStripMenuItem";
-            this.devolucionToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.devolucionToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.devolucionToolStripMenuItem.Text = "Devolucion";
+            this.devolucionToolStripMenuItem.Click += new System.EventHandler(this.devolucionToolStripMenuItem_Click);
             // 
             // Form1
             // 

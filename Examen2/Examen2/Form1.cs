@@ -33,5 +33,17 @@ namespace Examen2
             frmPeliculas pelicula = new frmPeliculas();
             pelicula.ShowDialog();
         }
+
+        private void rentaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Renta renta = new Renta();
+            renta.ShowDialog();
+        }
+
+        private void devolucionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDevolucion devolucion = new frmDevolucion();
+            devolucion.ShowDialog();
+        }
     }
 }
