@@ -44,7 +44,7 @@ namespace Examen2
             else
             {
                 cmbSuscriptor.DataSource = null;
-                cmbPelicula.DataSource = null;
+                dgvDevolver.DataSource = null;
             }
         }
         private void CargarPeliculasDelSuscriptor(int idSuscriptor)
@@ -52,12 +52,10 @@ namespace Examen2
             string consulta = "SELECT Peliculas.id, Peliculas.pelicula FROM Peliculas INNER JOIN Rentas ON Peliculas.id = Rentas.idPelicula WHERE Rentas.idSuscriptor = " + idSuscriptor;
             DataSet ds = datos.informacion(consulta);
 
-            cmbPelicula.DataSource = null;
+            dgvDevolver.DataSource = null;
             if (ds != null && ds.Tables.Count > 0)
             {
-                cmbPelicula.DataSource = ds.Tables[0];
-                cmbPelicula.DisplayMember = "pelicula";
-                cmbPelicula.ValueMember = "id";
+                dgvDevolver.DataSource = ds.Tables[0];
             }
         }
 
@@ -75,32 +73,30 @@ namespace Examen2
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
-            if (cmbSuscriptor.SelectedValue != null && cmbPelicula.SelectedValue != null)
+            if (cmbSuscriptor.SelectedValue != null)
             {
                 string idSuscriptor = cmbSuscriptor.SelectedValue.ToString();
-                string idPelicula = cmbPelicula.SelectedValue.ToString();
-
-                string queryDelete = "DELETE FROM Rentas WHERE idSuscriptor = " + idSuscriptor + " AND idPelicula = " + idPelicula;
+                string queryDelete = "DELETE FROM Rentas WHERE idSuscriptor = " + idSuscriptor;
                 bool exito = datos.ejecutar(queryDelete);
 
                 if (exito)
                 {
-                    MessageBox.Show("Película devuelta correctamente.");
+                    MessageBox.Show("Películas devueltas correctamente");
 
                     CargarSuscriptoresConRentas();
                     if (cmbSuscriptor.SelectedValue != null)
                     {
                         CargarPeliculasDelSuscriptor(Convert.ToInt32(cmbSuscriptor.SelectedValue));
                     }
+                    else
+                    {
+                        dgvDevolver.DataSource = null;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error al procesar la devolución en la base de datos.");
+                    MessageBox.Show("error");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un suscriptor y una película válida para devolver.");
             }
         }
     }

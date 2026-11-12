@@ -60,6 +60,7 @@
             // 
             // dgvRenta
             // 
+            this.dgvRenta.AllowUserToAddRows = false;
             this.dgvRenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRenta.Location = new System.Drawing.Point(12, 170);
             this.dgvRenta.Name = "dgvRenta";
