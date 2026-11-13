@@ -45,5 +45,15 @@ namespace Examen2
             frmDevolucion devolucion = new frmDevolucion();
             devolucion.ShowDialog();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();   
+        }
     }
 }

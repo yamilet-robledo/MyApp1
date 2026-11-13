@@ -39,10 +39,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(164, 9);
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label1.Location = new System.Drawing.Point(141, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 22);
+            this.label1.Size = new System.Drawing.Size(144, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Suscriptor";
             // 
@@ -58,18 +59,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.label2.Location = new System.Drawing.Point(164, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 22);
+            this.label2.Size = new System.Drawing.Size(111, 26);
             this.label2.TabIndex = 2;
             this.label2.Text = "Pelicula";
             // 
             // btnDevolver
             // 
+            this.btnDevolver.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevolver.Location = new System.Drawing.Point(168, 313);
             this.btnDevolver.Name = "btnDevolver";
-            this.btnDevolver.Size = new System.Drawing.Size(87, 39);
+            this.btnDevolver.Size = new System.Drawing.Size(124, 39);
             this.btnDevolver.TabIndex = 4;
             this.btnDevolver.Text = "Devolver";
             this.btnDevolver.UseVisualStyleBackColor = true;
@@ -78,6 +81,7 @@
             // dgvDevolver
             // 
             this.dgvDevolver.AllowUserToAddRows = false;
+            this.dgvDevolver.BackgroundColor = System.Drawing.Color.White;
             this.dgvDevolver.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDevolver.Location = new System.Drawing.Point(42, 134);
             this.dgvDevolver.Name = "dgvDevolver";
@@ -90,6 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(449, 377);
             this.Controls.Add(this.dgvDevolver);
             this.Controls.Add(this.btnDevolver);

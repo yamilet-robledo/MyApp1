@@ -15,6 +15,7 @@ namespace Examen2
     {
         Datos datos = new Datos();
         List<int> peliculasPorRentar = new List<int>();
+        DataTable dtCarrito = new DataTable();
         public Renta()
         {
             InitializeComponent();
@@ -22,6 +23,8 @@ namespace Examen2
 
         private void Renta_Load(object sender, EventArgs e)
         {
+            dtCarrito.Columns.Add("idPelicula", typeof(int));
+            dtCarrito.Columns.Add("pelicula", typeof(string));
             CargarCombos();
             ActualizarGrid();
         }
@@ -90,11 +93,6 @@ namespace Examen2
             if (cbSuscriptor.SelectedValue != null)
             {
             string idSuscriptor = cbSuscriptor.SelectedValue.ToString();
-
-            if (cbPelicula.SelectedValue != null && !peliculasPorRentar.Contains(Convert.ToInt32(cbPelicula.SelectedValue)))
-            {
-             peliculasPorRentar.Add(Convert.ToInt32(cbPelicula.SelectedValue));
-            }
             if (peliculasPorRentar.Count == 0)
             {
             MessageBox.Show("agrega minimo una pelicula");
@@ -109,6 +107,10 @@ namespace Examen2
                     if (conteoActual + cantidadNuevasRentas > limiteMaximo)
                     {
                         MessageBox.Show("limite excedido");
+
+                        peliculasPorRentar.Clear();
+                        dtCarrito.Clear();
+                        ActualizarComboPeliculas();
                         return;
                     }
                 }
@@ -124,8 +126,9 @@ namespace Examen2
                 }
                 if (exitoGeneral)
                 {
-                    MessageBox.Show("Se registraron bien");
+                    MessageBox.Show("Renta registrada");
                     peliculasPorRentar.Clear();
+                    dtCarrito.Clear();
                     ActualizarGrid();
                     CargarCombos();
                 }
@@ -149,14 +152,48 @@ namespace Examen2
             if(cbPelicula.SelectedValue != null)
             {
                 int idPelicula = Convert.ToInt32(cbPelicula.SelectedValue);
+                string nombrePelicula = ((DataRowView)cbPelicula.SelectedItem)["pelicula"].ToString();
                 peliculasPorRentar.Add(idPelicula);
-                MessageBox.Show("Película agregada");
+
+                dtCarrito.Rows.Add(idPelicula, nombrePelicula);
+                dgvRenta.DataSource = dtCarrito;
                 ActualizarComboPeliculas();
             }
             else
             {
-                MessageBox.Show("Seleccione una película que si este disponible para agregar");
+                MessageBox.Show("Seleccione una película que esté disponible para agregar");
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvRenta.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dgvRenta.SelectedRows[0];
+                int idPelicula = Convert.ToInt32(filaSeleccionada.Cells["idPelicula"].Value);
+
+                peliculasPorRentar.Remove(idPelicula);
+                DataRow[] filasAEliminar = dtCarrito.Select("idPelicula = " + idPelicula);
+                foreach (DataRow row in filasAEliminar)
+                {
+                    dtCarrito.Rows.Remove(row);
+                }
+
+                ActualizarComboPeliculas();
+
+                MessageBox.Show("Película descartada de la lista");
+            }
+            else
+            {
+                MessageBox.Show("Selecciona de la tabla la película que deseas quitar");
+            }
+        }
+
+        private void cbSuscriptor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            peliculasPorRentar.Clear();
+            dtCarrito.Clear();
+            ActualizarComboPeliculas();
         }
     }
 }

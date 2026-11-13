@@ -32,6 +32,7 @@ namespace Examen2
         }
         private void CargarSuscriptoresConRentas()
         {
+            cmbSuscriptor.DataSource = null;
             string consulta = "SELECT DISTINCT Suscriptor.id, Suscriptor.nombre FROM Suscriptor INNER JOIN Rentas ON Suscriptor.id = Rentas.idSuscriptor";
             DataSet ds = datos.informacion(consulta);
 

@@ -42,10 +42,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 27);
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label1.Location = new System.Drawing.Point(216, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 22);
+            this.label1.Size = new System.Drawing.Size(101, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
@@ -93,9 +94,10 @@
             // 
             // btnAgg
             // 
-            this.btnAgg.Location = new System.Drawing.Point(79, 339);
+            this.btnAgg.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgg.Location = new System.Drawing.Point(57, 339);
             this.btnAgg.Name = "btnAgg";
-            this.btnAgg.Size = new System.Drawing.Size(92, 25);
+            this.btnAgg.Size = new System.Drawing.Size(114, 39);
             this.btnAgg.TabIndex = 5;
             this.btnAgg.Text = "Agregar";
             this.btnAgg.UseVisualStyleBackColor = true;
@@ -103,9 +105,10 @@
             // 
             // btnmodificar
             // 
+            this.btnmodificar.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmodificar.Location = new System.Drawing.Point(208, 339);
             this.btnmodificar.Name = "btnmodificar";
-            this.btnmodificar.Size = new System.Drawing.Size(109, 25);
+            this.btnmodificar.Size = new System.Drawing.Size(138, 39);
             this.btnmodificar.TabIndex = 6;
             this.btnmodificar.Text = "modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
@@ -113,9 +116,10 @@
             // 
             // btneliminar
             // 
-            this.btneliminar.Location = new System.Drawing.Point(375, 336);
+            this.btneliminar.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminar.Location = new System.Drawing.Point(375, 339);
             this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(97, 28);
+            this.btneliminar.Size = new System.Drawing.Size(120, 39);
             this.btneliminar.TabIndex = 7;
             this.btneliminar.Text = "eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
@@ -125,6 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(584, 390);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btnmodificar);

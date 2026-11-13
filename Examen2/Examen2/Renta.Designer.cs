@@ -35,45 +35,52 @@
             this.cbSuscriptor = new System.Windows.Forms.ComboBox();
             this.cbPelicula = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenta)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label1.Location = new System.Drawing.Point(16, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 22);
+            this.label1.Size = new System.Drawing.Size(144, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Suscriptor";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.label2.Location = new System.Drawing.Point(16, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 22);
+            this.label2.Size = new System.Drawing.Size(111, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "Pelicula";
             // 
             // dgvRenta
             // 
             this.dgvRenta.AllowUserToAddRows = false;
+            this.dgvRenta.BackgroundColor = System.Drawing.Color.White;
             this.dgvRenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRenta.Location = new System.Drawing.Point(12, 170);
+            this.dgvRenta.MultiSelect = false;
             this.dgvRenta.Name = "dgvRenta";
             this.dgvRenta.RowHeadersWidth = 51;
             this.dgvRenta.RowTemplate.Height = 24;
+            this.dgvRenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRenta.Size = new System.Drawing.Size(480, 247);
             this.dgvRenta.TabIndex = 2;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(178, 423);
+            this.btnRegistrar.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Location = new System.Drawing.Point(254, 435);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(137, 31);
+            this.btnRegistrar.Size = new System.Drawing.Size(164, 31);
             this.btnRegistrar.TabIndex = 4;
             this.btnRegistrar.Text = "Registrar Renta";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -86,6 +93,7 @@
             this.cbSuscriptor.Name = "cbSuscriptor";
             this.cbSuscriptor.Size = new System.Drawing.Size(476, 24);
             this.cbSuscriptor.TabIndex = 5;
+            this.cbSuscriptor.SelectedIndexChanged += new System.EventHandler(this.cbSuscriptor_SelectedIndexChanged);
             // 
             // cbPelicula
             // 
@@ -98,19 +106,33 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(394, 120);
+            this.btnAgregar.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(376, 114);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(116, 32);
             this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Font = new System.Drawing.Font("Showcard Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(87, 435);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(145, 31);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // Renta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(504, 508);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.cbPelicula);
             this.Controls.Add(this.cbSuscriptor);
@@ -136,5 +158,6 @@
         private System.Windows.Forms.ComboBox cbSuscriptor;
         private System.Windows.Forms.ComboBox cbPelicula;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
